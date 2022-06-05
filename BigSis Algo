@@ -17,9 +17,9 @@ First time the app runs:
   #The reason for initializing all this is to minimize errors during runtime
   Ask user for number of roommates(Rnum)
   For i in range(len(Rnum)):
-    Ask pseudonyme (Add Privacy disclaimer) and append to Rlist
+    Ask pseudonyme (Add Privacy disclaimer) and append to Rlist:
   Ask user for number of chores (Cnum):
-  For i in range(len(Cnum));
+  For i in range(len(Cnum)):
     Ask for Chore and append to Clist
   Write data in log for future use.
   If runmode advanced:
@@ -30,24 +30,27 @@ First time the app runs:
       ???                             #not done yet
    Elif runmode minimal: 
     initialize taskdispatch dict
-    initialize empty mateList
-      for i in range(len(Rlist)):
-        if i <= len(Rlist)-2:
-          mateList.append(Node(Rlist[i],Rlist[i+1]))
+    initialize empty nodes
+      for name in Rlist:
+        name=Node(name)
+        nodes.append(name)
+      for node in nodes:
+        if node==nodes[-1]:
+          node.nextval=nodes[0]
         else:
-          mateList.append(Node(Rlist[i],Rlist[0]))
-      
+          node.nextval=nodes[nodes.index(node)+1]
+      for chore in Clist:
+        tmpNode=nodes[0]
+        if no chores assigned at tmpNode key:
+          dispatcher.setdefault(tmpNode.val,chore)
+        else:
+          dispatcher @ tmpNode key is updated with a list where chore is appended.
+        at the end tmpNode.nextval overwrites tmpNode
         
-    """
-      
-        
-          mate=Node(Rlist[i],Rlist[i+1])              #Node Object
-        elif i== len(Rlist)-1:
-          mate=Node(Rlist[i],Rlist[0])
-        taskdispatch.setdefaults(mate,chores)
-            
-        taskdispatcher.setdefault(chore,mate)
-    """
+   #Now we have to take care of the personal chore tracker which will be a Stack Object
+   initialize tasktracker dict
+   for 
+
     else:
   
   Tell the user the app will restart.
