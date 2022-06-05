@@ -1,0 +1,72 @@
+First time the app runs:
+  Write Log File with version date time location
+  Initialize runmode variable
+  Ask the user for the runmode advanced version or minimal:
+    If advanced:
+      then downloads required libraries.
+      pass "advanced" in runmode var
+      write runmode in next log for next use
+    Elif minimal:
+      pass "minimal" in runmode var
+      write runmode in log for next use
+      
+  Initialize Rnum
+  Initialize Rlist
+  Initialize Clist
+  Initialize Cnum
+  #The reason for initializing all this is to minimize errors during runtime
+  Ask user for number of roommates(Rnum)
+  For i in range(len(Rnum)):
+    Ask pseudonyme (Add Privacy disclaimer) and append to Rlist
+  Ask user for number of chores (Cnum):
+  For i in range(len(Cnum));
+    Ask for Chore and append to Clist
+  Write data in log for future use.
+  If runmode advanced:
+      Verify if required libraries are present
+      If not:
+        Download them.                #Redunduncy remove if possible
+      Else:
+      ???                             #not done yet
+   Elif runmode minimal: 
+    initialize taskdispatch dict
+    initialize empty mateList
+      for i in range(len(Rlist)):
+        if i <= len(Rlist)-2:
+          mateList.append(Node(Rlist[i],Rlist[i+1]))
+        else:
+          mateList.append(Node(Rlist[i],Rlist[0]))
+      
+        
+    """
+      
+        
+          mate=Node(Rlist[i],Rlist[i+1])              #Node Object
+        elif i== len(Rlist)-1:
+          mate=Node(Rlist[i],Rlist[0])
+        taskdispatch.setdefaults(mate,chores)
+            
+        taskdispatcher.setdefault(chore,mate)
+    """
+    else:
+  
+  Tell the user the app will restart.
+  
+Every other time the app runs:
+  Read Log file:
+    If runmode advanced:
+      Verify if required libraries are present
+      If not:
+        Download them.
+      Else:
+      ???
+   Elif runmode minimal:
+    Retreive roomate list and chores:
+    For i in range(len(Rlist[:len(Rlist)-1])):
+      mate=Node(Rlist[i],Rlist[i+1])              #Node Object
+      
+    
+    For chore in Clist:
+      tracker=stack(Rlist)
+      
+      
