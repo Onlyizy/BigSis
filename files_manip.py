@@ -46,5 +46,3 @@ def logwriter()->None:
     with open("log.txt","a+") as f:
         f.writelines([VERSION, datetime.now,system(),])
             
-t=config_file((FIRST_TIME_RUN_DISCLAIMER, PSEUDO_PRIVACY_DISCLAIMER),params)
-logwriter()
